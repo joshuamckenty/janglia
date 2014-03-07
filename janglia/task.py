@@ -41,6 +41,7 @@ class GangliaTask(moxie.Task):
     def migrate_0_to_1(self):
 	    self.ganglia_port = 8649
 	    self.receive_host = '127.0.0.1'
+	    self.cluster_name = "Piston OpenStack Cluster"
         self.depends.stamp_as_service(self, self.ganglia_port)
 
     def configure(self, bootflags, **_kw):
