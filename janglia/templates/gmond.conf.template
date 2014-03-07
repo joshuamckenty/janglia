@@ -1,0 +1,31 @@
+globals {
+  daemonize = yes
+  setuid = yes
+  user = nobody
+  debug_level = 0
+  max_udp_msg_len = 1472
+  mute = no
+  deaf = yes
+  allow_extra_data = yes
+  host_dmax = 86400 /* Remove host from UI after it hasn't report for a day */
+  cleanup_threshold = 300 /*secs */
+  gexec = no
+  send_metadata_interval = 30 /*secs */
+}
+
+cluster {
+  name = "$cluster_name"
+  owner = "unspecified"
+  latlong = "unspecified"
+  url = "unspecified"
+}
+
+host {
+  location = "unspecified"
+}
+
+udp_send_channel {
+  host = $receive_host
+  port = $ganglia_port
+  ttl = 1
+}
