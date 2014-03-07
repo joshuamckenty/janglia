@@ -57,19 +57,8 @@ class GangliaTask(moxie.Task):
 
 
 class GmondConfig(utils_config.GenericConfig):
-
-    __output__ = cfg_dir('gmond.conf')  # Final location. Must be specified.
-    #__owner__  = 'root'       # default is root
-    #__group__  = 'root'       # default is root
-    #__dir_owner_ = 'root'     # default is __owner__
-    #__dir_group_ = 'root' # default is __group__
-
-    # Finally, the umasks for the file and containing directory. The defaults
-    # for these are special; if the group is root, the default umask is 077,
-    # otherwise the umask is 0027
-    #__umask__     = 0027
-    #__dir_umask__ = 0027
-
+    __output__ = cfg_dir('gmond.conf')
+    
     def build(self):
         data = {
             "cluster_name": self.task.cluster_name,
