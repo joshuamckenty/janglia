@@ -27,7 +27,7 @@ GANGLIA_SYMLINKS = [
 
 class install(setuptools_install):
     def run(self):
-        super(install, self).run()
+        setuptools_install.run(self)
         # Data files don't get their execute bit set, so fix that.
         for dirname, files in GANGLIA_FILES:
             if dirname in ['/usr/local/sbin', '/usr/local/bin']:
