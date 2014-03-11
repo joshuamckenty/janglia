@@ -11,7 +11,6 @@ GANGLIA_FILES = [
     ('/usr/local/sbin', ['files/gmond']),
     ('/usr/local/bin', ['files/ganglia-config', 'files/gmetric', 'files/gstat']),
     ('/usr/local/lib', ['files/libconfuse.so.0.0.0']),
-    ('/usr/local/lib/pkgconfig', ['files/libconfuse.pc']),
     ('/usr/local/lib64', ['files/libganglia-3.6.0.so.0.0.0']),
     ('/usr/local/lib64/ganglia', ['files/modcpu.so', 'files/moddisk.so', 
         'files/modload.so', 'files/modmem.so',
