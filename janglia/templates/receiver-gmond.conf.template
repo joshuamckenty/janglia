@@ -5,7 +5,7 @@ globals {
   debug_level = 0
   max_udp_msg_len = 1472
   mute = no
-  deaf = yes
+  deaf = no
   allow_extra_data = yes
   host_dmax = 86400 /* Remove host from UI after it hasn't report for a day */
   cleanup_threshold = 300 /*secs */
@@ -28,4 +28,11 @@ udp_send_channel {
   host = $receive_host
   port = $ganglia_port
   ttl = 1
+}
+udp_recv_channel { 
+  port = $ganglia_port
+}
+
+tcp_accept_channel {
+  port = $ganglia_port
 }

@@ -13,3 +13,11 @@ cluster_name=My Big Cloud
 
 This will run gmond on every host, and master elect a single gmetad server.
 TODO(JMC): gmetad servers as an Agent
+
+building this
+-------------
+
+See notes on using iocane chroot for compiling.
+
+http://oss.oetiker.ch/rrdtool/pub/rrdtool.tar.gz
+http://www.shrike.tk/blog/rrdtool-with-libart

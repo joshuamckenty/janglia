@@ -28,7 +28,7 @@ class GangliaTask(moxie.Task):
         "floating_ip": {"type": "string", "format": "ipv4"},
         "interface":   {"$ref": "piston://#interface"},
         "ganglia_port":{"$ref": "piston://#port-int"},
-        "ganglia_host":{"type": "string"}
+        "ganglia_host":{"type": "string", "format": "hostname"}
     }
 
 

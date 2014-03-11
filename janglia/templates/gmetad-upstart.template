@@ -1,0 +1,20 @@
+# Upstart job for gmetad-server
+description "Ganglia GMetaD Server"
+author "Joshua McKenty <joshua@pistoncloud.com>"
+
+console log
+
+env LOG=/var/log/pipe/gmetad.log
+
+respawn
+
+env PIDFILE="/var/run/ganglia-gmetad.pid"
+
+script
+   test -f /etc/ganglia/gmetad.conf && . /etc/ganglia/gmetad.conf
+   export RRDCACHED_ADDRESS
+end script
+
+stop on shutdown-$shutdown_bucket
+
+exec /usr/sbin/gmetad --pid-file=$PIDFILE >> "\$LOG" 2>&1
